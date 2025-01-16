@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header-container">
+            <div class="title-container"> 
+                <h1 class="title">Dark Web Marketplace Evidential Scraper</h1>
+            </div>
+
+            <div class="info-container">
+                <p id="current-site-label" class="info-label">No site currently being scraped</p>
+                <p id="current-depth-limit-label" class="info-label">Current depth limit: 1</p>
+            </div>
+
+            <div class="toggle-container">
+                <span class="toggle-label">SCRAPER OFF</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-switch">
+                    <span class="slider round"></span>
+                </label>
+
+            <div class="button-container">
+                <button id="stopButton" class="stop-button"></button>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button type="button" id="settingsTab" class="active" onclick="openTab(event, 'settings')">Settings</button>
+            <!--<button type="button" id="capturesTab" onclick="openTab(event, 'captures')">Captures</button>-->
+        </div>
+    
+        <div id="settings" class="tab-content active">
+            <div class="content-container">
+                <div class="input-group">
+                    <label for="depthLimit">Depth Limit:</label>
+                    <input type="number" id="depthLimit" name="depthLimit" min="1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="startingUrl">Starting URL:</label>
+                    <input type="text" id="startingUrl" name="startingUrl">
+                </div>
+                
+                <button type="button" id="saveSettings">Save</button>
+            </div>
+        </div>
+        <!--
+        <div id="captures" class="tab-content">
+            <div class="content-container">
+                <p>captures will go here</p>
+            </div>
+        </div>
+        -->
+    </div>
+    
+
+<script src="popup.js"></script>
+
+</body>
+</html>

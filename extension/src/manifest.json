@@ -1,0 +1,35 @@
+{
+ "manifest_version": 2,
+ "name": "Dark Web Marketplace Evidential Scraper",
+ "version": "1.0.0",
+ "description": "An extension for scraping evidence off Dark Web Marketplaces",
+ "icons": {
+   "48": "assets/icons/icon-48.png",
+   "96": "assets/icons/icon-96.png"
+ },
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "unlimitedStorage",
+    "webRequest",
+    "<all_urls>"
+  ],
+
+ "browser_action": {
+   "default_icon": "assets/icons/icon-48.png",
+   "default_title": "Dark Web Evidential Scraper",
+   "default_popup": "popup/popup.html"
+ },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true,
+    "type": "module"
+  },
+  
+  "applications": { "gecko": { "id": "scraper@team2" } }
+}

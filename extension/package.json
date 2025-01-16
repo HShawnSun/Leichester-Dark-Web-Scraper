@@ -1,0 +1,18 @@
+{
+  "name": "team2_project",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm install && npm run copypkgs",
+    "build": "webpack --mode=development",
+    "build-release": "webpack --mode=production",
+    "doc": "jsdoc -d ./docs/ -r ./src"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^12.0.2",
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4",
+    "zip-webpack-plugin": "^4.0.0",
+    "js-sha256": "^0.11.0",
+    "jsdoc": "^4.0.2"
+  }
+}

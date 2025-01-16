@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>components/MainPage.vue - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-MainPage.html">MainPage</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deleteById">deleteById</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deleteCapture">deleteCapture</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getAllWebsitesId">getAllWebsitesId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getAllWebsitesName">getAllWebsitesName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getCaptureByTimeRange">getCaptureByTimeRange</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getCaptures">getCaptures</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getCapturesById">getCapturesById</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getCapturesByKeyword">getCapturesByKeyword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getCapturesByURL">getCapturesByURL</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getCapturesBypageId">getCapturesBypageId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getChildrenPagesByParentId">getChildrenPagesByParentId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getFirstPageIdByWebsiteId">getFirstPageIdByWebsiteId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getPageNamePromisebyID">getPageNamePromisebyID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getPageTitleByPageId">getPageTitleByPageId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getPagesByURL">getPagesByURL</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getPagesByWebsiteId">getPagesByWebsiteId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getWebsiteNameByWebsiteId">getWebsiteNameByWebsiteId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getWebsiteNoteByWebsiteId">getWebsiteNoteByWebsiteId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateNotesById">updateNotesById</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateWebsiteNoteById">updateWebsiteNoteById</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">components/MainPage.vue</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>&lt;template>
+  &lt;el-container>
+    &lt;el-header height="80px">
+      &lt;div class="headText">
+        &lt;h1>Dark Web Marketplace Evidential Scraper&lt;/h1>
+      &lt;/div>
+    &lt;/el-header>
+    &lt;el-container>
+      &lt;el-aside width="200px">
+        &lt;el-row class="tac">
+          &lt;el-col :span="24">
+            &lt;!-- &lt;h5 class="mb-2">Side bar&lt;/h5> -->
+            &lt;el-menu
+              active-text-color="#ffd04b"
+              background-color="#545c64"
+              class="el-menu-vertical-demo"
+              default-active="2"
+              text-color="#fff"
+              @open="handleOpen"
+              @close="handleClose"
+            >
+              &lt;el-menu-item index="1" @click="MainMenu">
+                &lt;el-icon>&lt;icon-menu />&lt;/el-icon>
+                &lt;span> Main Menu &lt;/span>
+              &lt;/el-menu-item>
+
+              &lt;el-menu-item index="2" @click="Manage">
+                &lt;el-icon>&lt;icon-menu />&lt;/el-icon>
+                &lt;span>Manage&lt;/span>
+              &lt;/el-menu-item>
+              &lt;el-sub-menu index="3">
+                &lt;template #title>
+                  &lt;el-icon>&lt;location />&lt;/el-icon>
+                  &lt;span>Search&lt;/span>
+                &lt;/template>
+
+                &lt;el-menu-item index="1-1" @click="TreeSearch">
+                  Tree Search
+                &lt;/el-menu-item>
+                &lt;el-menu-item index="1-2" @click="SelectSearch"
+                  >Select Search&lt;/el-menu-item
+                >
+                &lt;el-menu-item index="1-3" @click="TimeSearch"
+                  >Time Search&lt;/el-menu-item
+                >
+                &lt;el-menu-item index="1-4" @click="WebsiteSearch"
+                  >Website Search&lt;/el-menu-item
+                >
+              &lt;/el-sub-menu>
+              &lt;el-menu-item index="4">
+                &lt;el-icon>&lt;icon-menu />&lt;/el-icon>
+                &lt;span>Settings&lt;/span>
+              &lt;/el-menu-item>
+            &lt;/el-menu>
+          &lt;/el-col>
+        &lt;/el-row>
+      &lt;/el-aside>
+      &lt;el-main>
+        &lt;router-view>&lt;/router-view>
+      &lt;/el-main>
+    &lt;/el-container>
+  &lt;/el-container>
+&lt;/template>
+
+&lt;script>
+/**
+ * @vue-methods:
+ * MainMenu: Redirect to the main menu page
+ * TreeSearch: Redirect to the tree search page
+ * SelectSearch: Redirect to the select search page
+ * Manage: Redirect to the manage page
+ * TimeSearch: Redirect to the time search page
+ * WebsiteSearch: Redirect to the website search page
+ *
+ */
+export default {
+  name: "MainPage",
+  data() {
+    return {
+      dialogVisibleEdit: false,
+      dialogVisibleChangeUser: false,
+    };
+  },
+  methods: {
+    MainMenu() {
+      this.$router.push("/");
+    },
+    TreeSearch() {
+      this.$router.push("/treeSearch");
+    },
+    SelectSearch() {
+      this.$router.push("/selectSearch");
+    },
+    Manage() {
+      this.$router.push("/manage");
+    },
+    TimeSearch() {
+      this.$router.push("/timeSearch");
+    },
+    WebsiteSearch() {
+      this.$router.push("/websiteSearch");
+    },
+  },
+};
+&lt;/script>
+
+&lt;style scoped>
+.el-container {
+  height: 100%;
+}
+
+.el-aside {
+  background-color: #8faab8;
+}
+
+.el-header {
+  background-color: #a2bbc5;
+  color: #333;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.el-card {
+  --el-card-padding: 10px;
+}
+
+.headText {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0 auto;
+}
+
+.name {
+  margin-left: auto;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.el-dropdown-link {
+  font-size: 18px;
+}
+
+.el-icon--right {
+  margin-top: 0px;
+}
+
+.example-showcase .el-dropdown-link {
+  cursor: pointer;
+  color: var(--el-color-primary);
+}
+
+.username {
+  display: flex;
+  align-items: center;
+}
+
+.headImg {
+  margin-right: 20px;
+  margin-top: 24px;
+}
+
+.demo-basic {
+  text-align: center;
+}
+.demo-basic .sub-title {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--el-text-color-secondary);
+}
+.demo-basic .demo-basic--circle,
+.demo-basic .demo-basic--square {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.demo-basic .block:not(:last-child) {
+  border-right: 1px solid var(--el-border-color);
+}
+.demo-basic .block {
+  flex: 1;
+}
+.demo-basic .el-col:not(:last-child) {
+  border-right: 1px solid var(--el-border-color);
+}
+&lt;/style>
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Tue Apr 23 2024 21:01:30 GMT+0100 (英国夏令时间) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
